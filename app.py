@@ -14,14 +14,9 @@ app = Flask(__name__)
 CORS(app, resources={r'/*': {'origins': '*'}})
 
 
-@app.route('/', methods=['GET'])
-def index():
-    return render_template('client/public/index.html')
-
-
 @app.route('/ping', methods=['GET'])
 def ping_pong():
-    return jsonify('what the shit?')
+    return jsonify('Pong!')
 
 
 @app.route('/token', methods=['POST'])
